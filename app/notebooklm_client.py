@@ -46,7 +46,7 @@ class NotebookLMClient:
         await self._load_cookies()
         self._page = await self._context.new_page()
         self._page.set_default_timeout(self._navigation_timeout)
-        await self._page.goto(self._config.base_url, wait_until="networkidle")
+        await self._page.goto(self._config.base_url)
         return self
 
     async def __aexit__(self, exc_type, exc, tb) -> None:  # type: ignore[override]
@@ -96,7 +96,7 @@ class NotebookLMClient:
             raise NotebookLMError("Upload selectors are missing from the configuration file.")
 
         LOGGER.debug("Navigating to NotebookLM base URL: %s", self._config.base_url)
-        await self._page.goto(self._config.base_url, wait_until="networkidle")
+        await self._page.goto(self._config.base_url)
 
         LOGGER.debug("Clicking the add source button (%s)", add_button_selector)
         await self._page.click(add_button_selector)
