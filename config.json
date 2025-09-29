@@ -1,0 +1,22 @@
+{
+  "notebooklm": {
+    "base_url": "https://notebooklm.google.com/",
+    "upload": {
+      "add_source_button": "[data-testid='add-source']",
+      "file_input": "input[type=\"file\"]",
+      "processing_indicator": "[data-testid='source-processing']",
+      "processed_marker": "[data-testid='source-ready']"
+    },
+    "query": {
+      "prompt_input": "textarea[aria-label='Ask a question']",
+      "submit_button": "button[data-testid='send-prompt']",
+      "response_container": "[data-testid='response-card']",
+      "citation_selector": "[data-testid='citation-chip']"
+    },
+    "timeouts": {
+      "page_load": 30000,
+      "processing": 180000,
+      "response": 120000
+    }
+  }
+}
